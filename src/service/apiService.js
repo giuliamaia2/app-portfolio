@@ -1,7 +1,7 @@
 const axios = require('axios')
 
 const httpClient = axios.create({
-    baseURL: 'http://webhook-asana.herokuapp.com/'
+    baseURL: 'https://webhook-asana.herokuapp.com/'
 })
 
 class ApiService {
