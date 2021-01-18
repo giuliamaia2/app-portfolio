@@ -1,4 +1,4 @@
-import Portfolio from './portfolio.js'
+import Portfolio from './PortfolioContainer.js'
 
 function App() {
   return (
