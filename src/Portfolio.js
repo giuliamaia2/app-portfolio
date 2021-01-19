@@ -77,6 +77,7 @@ class Portfolio extends React.Component {
                                     <TableCell> Projeto </TableCell>
                                     <TableCell> Status </TableCell>
                                     <TableCell> Data Criação </TableCell>
+                                    <TableCell> Data Limite </TableCell>
                                     <TableCell> Task Progress</TableCell>
                                 </TableRow>
                             </TableHead>
