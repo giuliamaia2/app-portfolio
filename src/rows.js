@@ -9,6 +9,7 @@ import MuiDialogContent from '@material-ui/core/DialogContent';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
+import Slider from '@material-ui/core/Slider';
 
 export default function PortfolioRows(props) {
     const [open, setOpen] = React.useState(false);
@@ -58,7 +59,16 @@ export default function PortfolioRows(props) {
     }))(MuiDialogContent);
 
 
+
     const rows = portfolio.map(projeto => {
+
+        const marks = [
+            {
+                value: projeto.percentage,
+                label: `${projeto.percentage}%`
+            }];
+
+
         return (
             <TableRow scope="row" key={projeto.id}>
                 <TableCell > {projeto.name} </TableCell>
@@ -73,6 +83,19 @@ export default function PortfolioRows(props) {
                     </div>
                 </TableCell>
                 <TableCell > {projeto.createdAt}</TableCell>
+                <TableCell>
+                    <Slider
+                        value={projeto.percentage}
+                        // getAriaValueText={valuetext}
+                        aria-labelledby="discrete-slider"
+                        valueLabelDisplay="auto"
+                        min={0}
+                        max={100}
+                        marks={marks}
+                        disabled
+                    />
+
+                </TableCell>
             </TableRow>
         )
 

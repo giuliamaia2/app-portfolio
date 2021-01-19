@@ -77,12 +77,13 @@ class Portfolio extends React.Component {
                                     <TableCell> Projeto </TableCell>
                                     <TableCell> Status </TableCell>
                                     <TableCell> Data Criação </TableCell>
+                                    <TableCell> Task Progress</TableCell>
                                 </TableRow>
                             </TableHead>
                             {
                                 this.state.portfolio == null ?
                                     (
-                                        <div></div>
+                                        <></>
                                     ) : (
                                         <PortfolioRows portfolio={this.state.portfolio} />
                                     )
