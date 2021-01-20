@@ -10,8 +10,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Slider from '@material-ui/core/Slider';
-import Badge from '@material-ui/core/Badge';
-import Grid from '@material-ui/core/Grid';
+import Status from './Status.js';
 
 export default function PortfolioRows(props) {
     const [open, setOpen] = React.useState(false);
@@ -21,14 +20,6 @@ export default function PortfolioRows(props) {
     const clickStatus = (status) => {
         setOpen(true)
         setStatus(status)
-    }
-
-    const getDescription = (description) => {
-        if(description == null){
-            return null;
-        }
-        description = description.substring(0, 40);
-        return `${description}...`
     }
 
     const handleClose = () => {
@@ -96,31 +87,8 @@ export default function PortfolioRows(props) {
                         cursor: 'pointer'
                     }}
                         onClick={e => clickStatus(projeto.statusDescription)}>
-                        <Badge classes={{colorPrimary: "green"}} variant="dot" badgeContent="" anchorOrigin={{
-                            vertical: 'top',
-                            horizontal: 'left',
-                        }}>
-                            <Grid
-                                container
-                                direction="column"
-                                justify="flex-start"
-                                alignItems="flex-start"
-                            >
-                                <Grid item>
-                                    <Typography variant="subtitle2" gutterBottom>
-                                        {projeto.statusTitle}
-                                    </Typography>
-                                </Grid>
 
-                                <Grid item>
-                                    <Typography variant="caption" gutterBottom>
-                                        {getDescription(projeto.statusDescription)}
-                                    </Typography>
-                                </Grid>
-                            </Grid>
-
-
-                        </Badge>
+                        <Status description={projeto.statusDescription} title={projeto.statusTitle} color={projeto.statusColor} />
 
                     </div>
 

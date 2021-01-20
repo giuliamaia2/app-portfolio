@@ -74,10 +74,10 @@ class Portfolio extends React.Component {
                         <Table className={classes.container} size="small" aria-label="a dense table">
                             <TableHead>
                                 <TableRow>
-                                    <TableCell> Projeto </TableCell>
+                                    <TableCell> Project </TableCell>
                                     <TableCell> Status </TableCell>
-                                    <TableCell> Data Criação </TableCell>
-                                    <TableCell> Data Limite </TableCell>
+                                    <TableCell align="right"> Creation Date </TableCell>
+                                    <TableCell align="right"> Deadline </TableCell>
                                     <TableCell> Task Progress</TableCell>
                                 </TableRow>
                             </TableHead>
